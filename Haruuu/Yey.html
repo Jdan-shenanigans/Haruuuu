@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Celebration Time!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #fce4ec;
+      color: #d81b60;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff4081;
+    }
+    p {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+    .message {
+      font-size: 2em;
+      color: #00c853;
+      font-weight: bold;
+      margin-top: 50px;
+      animation: bounce 1s infinite alternate;
+    }
+    /* Animation for bounce effect */
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); }
+    }
+    .confetti {
+      font-size: 2em;
+      color: #ffeb3b;
+      animation: confetti 1s infinite alternate;
+    }
+    @keyframes confetti {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Yeeeeeey 🎉</h1>
+  
+  <!-- Teasing Message -->
+  <p class="message">Oh my gosh! You actually said YES! 😱</p>
+  
+  <div class="confetti">✨🎉🎊✨</div>
+  
+  <p>Yiiiee exciting 💖</p>
+
+  <p>See you! See you! See you!</p>
+
+  <audio id="partyPopSound" src="Bang.mp3"></audio>
+
+  <script>
+    window.onload = function() {
+      // Play party pop sound when the page loads
+      const sound

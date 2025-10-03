@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ask lang</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #ffe6f0;
+    }
+    h1 {
+      color: #ff4081;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    #yesBtn {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #maybeBtn {
+      background-color: #FFC107;
+      color: white;
+    }
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ready ka na bukas? 💖</h1>
+
+  <!-- Yes Button -->
+  <a href="Confirmation.html">
+    <button id="yesBtn">Yes</button>
+  </a>
+
+  <!-- Maybe Button: Opens a new window with a button to go back to the first page -->
+  <button id="maybeBtn" onclick="openMaybeWindow()">Maybe</button>
+
+  <!-- No Button -->
+  <button id="noBtn">No</button>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+
+    function moveButton() {
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 100));
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+
+    noBtn.addEventListener('mouseenter', moveButton);
+
+    // Function to open the "Maybe" window
+    function openMaybeWindow() {
+      // Open a new window with a specific size (for example, 400x300 pixels)
+      const maybeWindow = window.open('', 'MaybeWindow', 'width=400,height=300');
+
+      // HTML content of the new window
+      maybeWindow.document.write(`
+        <html>
+          <head>
+            <title>Maybe...</title>
+            <style>
+              body {
+                font-family: 'Arial', sans-serif;
+                text-align: center;
+                margin-top: 50px;
+                background-color: #fff3e0;
+              }
+              h1 {
+                color: #ff7043;
+              }
+              button {
+                font-size: 20px;
+                padding: 15px 30px;
+                margin: 20px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                background-color: #4CAF50;
+                color: white;
+              }
+            </style>
+          </head>
+          <body>
+            <h1>Still thinking? 🤔</h1>
+            <p>Dapat oo lang ang sagot 😠</p>
+            <button onclick="window.location.href='index.html'">Sorry na</button>
+          </body>
+        </html>
+      `);
+    }
+  </script>
+
+</body>
+</html>
